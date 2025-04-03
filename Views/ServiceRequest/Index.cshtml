@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MunicipalityManagementSystem.Models.ServiceRequest>
+
+@{
+    ViewData["Title"] = "Service Request Index";
+}
+
+<h1>Service Request Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Citizen ID</th>
+            <th>Service Type</th>
+            <th>Request Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CitizenID</td>
+                <td>@item.ServiceType</td>
+                <td>@item.RequestDate.ToString("d")</td>
+                <td>@item.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RequestID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RequestID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RequestID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

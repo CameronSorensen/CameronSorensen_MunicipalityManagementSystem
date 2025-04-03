@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MunicipalityManagementSystem.Models.Report>
+
+@{
+    ViewData["Title"] = "Reports Index";
+}
+
+<h1>Reports Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Citizen ID</th>
+            <th>Report Type</th>
+            <th>Details</th>
+            <th>Submission Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CitizenID</td>
+                <td>@item.ReportType</td>
+                <td>@item.Details</td>
+                <td>@item.SubmissionDate.ToString("d")</td>
+                <td>@item.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ReportID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ReportID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ReportID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

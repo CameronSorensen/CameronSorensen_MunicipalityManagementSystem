@@ -1,0 +1,21 @@
+body {
+    padding-top: 56px;
+}
+
+footer {
+    padding: 1rem 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #cccccc !important;
+    }
